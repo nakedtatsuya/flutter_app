@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:http/http.dart' as http;
 // jsonDecode
 import 'dart:convert';
+import 'package:image_picker/image_picker.dart';
 
 class Album {
   final int itemId;
@@ -106,6 +109,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 decoration: const InputDecoration(labelText: 'Send a message'),
               ),
             ),
+            // Image.asset('images/output.jpg'),
+            ImageUploadWidget(),
+
             FutureBuilder<Album>(
               future: futureAlbum,
               builder: (context, snapshot) {
@@ -149,5 +155,60 @@ class _MyHomePageState extends State<MyHomePage> {
     _channel.sink.close();
     _controller.dispose();
     super.dispose();
+  }
+}
+
+class ImageUploadWidget extends StatefulWidget {
+  @override
+  _ImageUploadWidgetState createState() => _ImageUploadWidgetState();
+}
+
+class _ImageUploadWidgetState extends State<ImageUploadWidget> {
+  XFile? _image;
+
+  Future<void> _pickImage() async {
+    final ImagePicker _picker = ImagePicker();
+    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+
+    if (image != null) {
+      setState(() {
+        _image = image;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        if (_image != null) Image.file(File(_image!.path)),
+        ElevatedButton(
+          onPressed: _pickImage,
+          child: const Text('aaaaa'),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            if (_image != null) {
+              uploadImage(_image!.path);
+            }
+          },
+          child: Text('画像をアップロード'),
+        ),
+      ],
+    );
+  }
+}
+
+Future<void> uploadImage(String filePath) async {
+  var request = http.MultipartRequest(
+      'POST', Uri.parse('http://127.0.0.1:8000/pictures'));
+  request.files.add(await http.MultipartFile.fromPath('file', filePath));
+
+  var response = await request.send();
+
+  if (response.statusCode == 200) {
+    print('アップロード成功');
+  } else {
+    print('アップロード失敗: ${response.statusCode}');
   }
 }

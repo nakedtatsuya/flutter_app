@@ -24,7 +24,7 @@ def mosaic_face(image) -> None:
             image = apply_mosaic(image1, x, y, width, height, mosaic_size=10)
 
     # 画像の保存
-    cv2.imwrite('./src/assets/images/output.jpg', image)
+    # cv2.imwrite('./src/assets/images/output.jpg', image)
     return image
 
-mosaic_face(image1)
+# mosaic_face(image1)
