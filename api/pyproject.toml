@@ -6,14 +6,19 @@ authors = [
     { name = "tatsuyafukui", email = "nakedtatsuya@gmail.com" }
 ]
 dependencies = [
-    "flask>=3.0.0",
     "opencv-python>=4.8.1.78",
+    "insightface>=0.7.3",
+    "easyocr>=1.7.1",
+    "numpy>=1.24.4",
+    "onnxruntime>=1.16.3",
+    "fastapi>=0.106.0",
+    "uvicorn[standard]>=0.25.0",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
 
-[tool.rye.scripts]
-start = "python src/api/__init__.py"
+[project.scripts]
+hello = "api:hello"
 
 [build-system]
 requires = ["hatchling"]
@@ -25,3 +30,6 @@ dev-dependencies = []
 
 [tool.hatch.metadata]
 allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/api"]
