@@ -1,26 +1,13 @@
-import cv2
-from lib.mosaic import apply_mosaic
-from lib.face_diff import compute_sim
-import insightface
+from fastapi import FastAPI
 
-face_analysis = insightface.app.FaceAnalysis()
-face_analysis.prepare(ctx_id=0, det_size=(640, 640))
-image1 = cv2.imread("./src/image.jpg")
-faces = face_analysis.get(image1)
+app = FastAPI()
 
-for face in faces:
 
-    # 顔認識
-    # match = compare_faces('./api/me.png', face_encoding, tolerance=0.4)
-    similarity = compute_sim(target_face=face, registed_face_image_path="./src/me.png")
-    if similarity < 0.6:
-        # 登録済みの顔でない場合にモザイクを適用
-        bbox = face.bbox.astype(int)
-        x, y, x2, y2 = bbox
-        width = x2 - x
-        height = y2 - y
-        image = apply_mosaic(image1, x, y, width, height, mosaic_size=10)
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
 
-# 画像の保存
-cv2.imwrite('./src/mosaic_faces.jpg', image)
 
+@app.get("/items/{item_id}")
+def read_item(item_id: int, q: str = None, hoge: str = None):
+    return {"item_id": item_id, "q": q, "hoge": hoge}

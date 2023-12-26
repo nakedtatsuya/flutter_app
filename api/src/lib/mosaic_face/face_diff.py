@@ -8,7 +8,7 @@ face_analysis.prepare(ctx_id=0, det_size=(640, 640))
 
 
 # REF: https://github.com/deepinsight/insightface/blob/f474870cc5b124749d482cf175818413a9fe12cd/python-package/insightface/model_zoo/arcface_onnx.py#L70
-def compute_sim(target_face, registed_face_image_path):
+def compute_face_diff(target_face, registed_face_image_path) -> float:
     embedding1 = target_face.embedding
 
     registed_face_image = cv2.imread(registed_face_image_path)
