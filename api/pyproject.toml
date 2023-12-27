@@ -15,6 +15,8 @@ dependencies = [
     "uvicorn[standard]>=0.25.0",
     "pydantic>=2.5.3",
     "python-multipart>=0.0.6",
+    "ruff>=0.1.9",
+    "mypy>=1.8.0",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
@@ -28,10 +30,43 @@ build-backend = "hatchling.build"
 
 [tool.rye]
 managed = true
-dev-dependencies = []
+dev-dependencies = [
+    "pytest>=7.4.3",
+]
 
 [tool.hatch.metadata]
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/api"]
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
+disallow_untyped_decorators = false
+disallow_untyped_calls = false
+
+[tool.ruff]
+select = [
+    "F", # pyflakes
+    "E", # pycodestyle
+    "W", # pycodestyle warnings
+    "I", # isort
+    "D", # pydocstyle
+]
+ignore = []
+# 1行の最大文字数
+line-length = 88
+
+extend-ignore = [
+    "D100",
+    "D103",
+    "D105", # undocumented-magic-method
+    "D107", # undocumented-public-init
+    "D205", # blank-line-after-summary
+    "D415" # ends-in-punctuation
+]
+
+[tool.ruff.lint.pydocstyle]
+# docstringをgoogle styleにする
+convention = "google"

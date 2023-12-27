@@ -7,15 +7,17 @@ face_analysis = insightface.app.FaceAnalysis()
 face_analysis.prepare(ctx_id=0, det_size=(640, 640))
 image1 = cv2.imread("./src/assets/images/input.jpg")
 
-def mosaic_face(image) -> None:
+
+def mosaic_face(image: cv2.typing.MatLike):
     faces = face_analysis.get(image)
 
     for face in faces:
-
         # 顔認識
         # match = compare_faces('./api/me.png', face_encoding, tolerance=0.4)
-        similarity = compute_face_diff(target_face=face, registed_face_image_path="./src/assets/images/me.png")
-        if similarity < 0.6:
+        is_similarity = compute_face_diff(
+            target_face=face, registed_face_image_path="./src/assets/images/me.png"
+        )
+        if is_similarity:
             # 登録済みの顔でない場合にモザイクを適用
             bbox = face.bbox.astype(int)
             x, y, x2, y2 = bbox
@@ -26,5 +28,3 @@ def mosaic_face(image) -> None:
     # 画像の保存
     # cv2.imwrite('./src/assets/images/output.jpg', image)
     return image
-
-# mosaic_face(image1)

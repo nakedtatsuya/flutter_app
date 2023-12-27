@@ -3,15 +3,15 @@
   "packages": [
     {
       "name": "_fe_analyzer_shared",
-      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-61.0.0",
+      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-64.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.0"
     },
     {
       "name": "analyzer",
-      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/analyzer-5.13.0",
+      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/analyzer-6.2.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "args",
@@ -45,7 +45,7 @@
     },
     {
       "name": "collection",
-      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/collection-1.17.2",
+      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/collection-1.18.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -57,9 +57,9 @@
     },
     {
       "name": "coverage",
-      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/coverage-1.6.4",
+      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/coverage-1.7.2",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "crypto",
@@ -95,7 +95,7 @@
       "name": "flutter",
       "rootUri": "file:///home/tatsuyafukui/flutter/packages/flutter",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "flutter_lints",
@@ -107,7 +107,7 @@
       "name": "flutter_test",
       "rootUri": "file:///home/tatsuyafukui/flutter/packages/flutter_test",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "frontend_server_client",
@@ -123,9 +123,9 @@
     },
     {
       "name": "http",
-      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/http-1.1.0",
+      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/http-1.1.2",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "http_multi_server",
@@ -177,7 +177,7 @@
     },
     {
       "name": "meta",
-      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/meta-1.9.1",
+      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/meta-1.10.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -257,7 +257,7 @@
       "name": "sky_engine",
       "rootUri": "file:///home/tatsuyafukui/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "source_map_stack_trace",
@@ -279,15 +279,15 @@
     },
     {
       "name": "stack_trace",
-      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/stack_trace-1.11.0",
+      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/stack_trace-1.11.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "stream_channel",
-      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/stream_channel-2.1.1",
+      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/stream_channel-2.1.2",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "2.19"
     },
     {
       "name": "string_scanner",
@@ -303,21 +303,21 @@
     },
     {
       "name": "test",
-      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/test-1.24.3",
+      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/test-1.24.9",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "test_api",
-      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/test_api-0.6.0",
+      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/test_api-0.6.1",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "test_core",
-      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/test_core-0.5.3",
+      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/test_core-0.5.9",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "typed_data",
@@ -333,9 +333,9 @@
     },
     {
       "name": "vm_service",
-      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/vm_service-11.10.0",
+      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/vm_service-13.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "watcher",
@@ -345,9 +345,9 @@
     },
     {
       "name": "web",
-      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/web-0.1.4-beta",
+      "rootUri": "file:///home/tatsuyafukui/.pub-cache/hosted/pub.dev/web-0.3.0",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.2"
     },
     {
       "name": "web_socket_channel",
@@ -368,13 +368,13 @@
       "languageVersion": "2.19"
     },
     {
-      "name": "myapp",
+      "name": "mosaic_app",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-12-26T10:08:14.238586Z",
+  "generated": "2023-12-27T05:58:57.113442Z",
   "generator": "pub",
-  "generatorVersion": "3.1.2"
+  "generatorVersion": "3.2.3"
 }

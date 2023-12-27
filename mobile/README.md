@@ -1,4 +1,4 @@
-# myapp
+# mosaic_app
 
 A new Flutter project.
 
