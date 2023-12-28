@@ -27,7 +27,6 @@ class _ImageUploadWidgetState extends State<ImageUploadWidget> {
 
   @override
   Widget build(BuildContext context) {
-    Uint8List bytes = base64Decode(_output!);
     return Column(
       children: [
         if (_image != null) Image.file(File(_image!.path)),
@@ -46,7 +45,7 @@ class _ImageUploadWidgetState extends State<ImageUploadWidget> {
           },
           child: const Text('Upload Image'),
         ),
-        if (_output != null) Image.memory(bytes),
+        if (_output != null) Image.memory(base64Decode(_output!)),
       ],
     );
   }
