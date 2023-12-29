@@ -5,10 +5,12 @@ import insightface
 
 face_analysis = insightface.app.FaceAnalysis()
 face_analysis.prepare(ctx_id=0, det_size=(640, 640))
-image1 = cv2.imread("./src/assets/images/input.jpg")
 
 
 def mosaic_face(image: cv2.typing.MatLike):
+    if image.shape[2] == 4:
+        # アルファチャンネルを除去してRGBに変換
+        image = cv2.cvtColor(image, cv2.COLOR_BGRA2BGR)
     faces = face_analysis.get(image)
 
     for face in faces:
@@ -23,7 +25,7 @@ def mosaic_face(image: cv2.typing.MatLike):
             x, y, x2, y2 = bbox
             width = x2 - x
             height = y2 - y
-            image = apply_mosaic(image1, x, y, width, height, mosaic_size=10)
+            image = apply_mosaic(image, x, y, width, height, mosaic_size=10)
 
     # 画像の保存
     # cv2.imwrite('./src/assets/images/output.jpg', image)
