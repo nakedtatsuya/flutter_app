@@ -4,6 +4,10 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 
+dependencies {
+    implementation 'com.google.android.material:material:1.11.0'
+}
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -29,8 +33,9 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace "com.example.myapp"
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 34
+    namespace "com.nakedtatsuya.mosaic_app"
+    // compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -48,7 +53,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.myapp"
+        applicationId "com.nakedtatsuya.mosaic_app"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion flutter.minSdkVersion

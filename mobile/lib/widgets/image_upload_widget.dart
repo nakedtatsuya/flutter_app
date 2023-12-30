@@ -29,7 +29,7 @@ class _ImageUploadWidgetState extends State<ImageUploadWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        if (_image != null) Image.file(File(_image!.path)),
+        if (_image != null) Text(_image!.path),
         ElevatedButton(
           onPressed: _pickImage,
           child: const Text('Choose Image'),
