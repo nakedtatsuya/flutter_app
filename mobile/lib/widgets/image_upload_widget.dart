@@ -37,10 +37,10 @@ class _ImageUploadWidgetState extends State<ImageUploadWidget> {
         ElevatedButton(
           onPressed: () async {
             if (_image != null) {
-              var res = await NetworkService.uploadImage(_image!.path);
-              setState(() {
-                _output = res.imageString;
-              });
+              // var res = await NetworkService.uploadImage(_image!.path);
+              // setState(() {
+              //   _output = res.imageString;
+              // });
             }
           },
           child: const Text('Upload Image'),

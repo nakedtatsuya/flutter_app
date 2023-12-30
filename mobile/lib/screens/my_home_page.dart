@@ -18,7 +18,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    futurePicture = NetworkService.fetchJSON();
+    // futurePicture = NetworkService.fetchJSON();
   }
 
   @override
