@@ -13,7 +13,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late Future<Picture> futurePicture;
+  // late Future<Picture> futurePicture;
 
   @override
   void initState() {
@@ -32,20 +32,20 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ImageUploadWidget(),
-            FutureBuilder<Picture>(
-              future: futurePicture,
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const CircularProgressIndicator();
-                } else if (snapshot.hasError) {
-                  return Text('${snapshot.error}');
-                } else if (snapshot.hasData) {
-                  return Text(snapshot.data!.imageString);
-                } else {
-                  return const Text('No data');
-                }
-              },
-            ),
+            // FutureBuilder<Picture>(
+            //   future: futurePicture,
+            //   builder: (context, snapshot) {
+            //     if (snapshot.connectionState == ConnectionState.waiting) {
+            //       return const CircularProgressIndicator();
+            //     } else if (snapshot.hasError) {
+            //       return Text('${snapshot.error}');
+            //     } else if (snapshot.hasData) {
+            //       return Text(snapshot.data!.imageString);
+            //     } else {
+            //       return const Text('No data');
+            //     }
+            //   },
+            // ),
             const SizedBox(height: 24),
           ],
         ),
