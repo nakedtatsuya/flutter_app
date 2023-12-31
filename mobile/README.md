@@ -1,4 +1,4 @@
-# mosaic_app
+# mobile2
 
 A new Flutter project.
 
