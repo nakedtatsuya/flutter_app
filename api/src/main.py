@@ -3,6 +3,7 @@ import numpy as np
 from fastapi import FastAPI, UploadFile
 from lib.mosaic_face.index import mosaic_face
 import base64
+from mangum import Mangum
 
 app = FastAPI()
 
@@ -30,3 +31,6 @@ async def add_picture(file: UploadFile):
     cv2.imwrite("./src/assets/images/output.jpg", output)
     # 画像をレスポンスとして返す
     return {"item_id": 1, "image": image_base64}
+
+
+handler = Mangum(app)
