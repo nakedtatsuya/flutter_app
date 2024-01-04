@@ -11,7 +11,6 @@ class MyApp extends StatelessWidget {
     const title = 'Mosaic App';
     return const MaterialApp(
       title: title,
-      // home: Text("Hello World"),
       home: MyHomePage(title: title),
     );
   }
