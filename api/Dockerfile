@@ -4,12 +4,17 @@ FROM python:3.11
 # 作業ディレクトリの設定
 WORKDIR /app
 
-# 必要なPythonパッケージをインストール
-COPY requirements.lock ./
-RUN pip install --no-cache-dir -r requirements.lock
-
-# アプリケーションコードをコピー
+# アプリケーションコードと依存関係ファイルをコピー
 COPY . .
+
+RUN apt update
+
+# OpenCVの依存ライブラリをインストール
+RUN apt-get update && apt-get install -y \
+    libgl1-mesa-dev
+
+# 必要なPythonパッケージをインストール
+RUN pip install --no-cache-dir -r requirements.lock
 
 # ポートを公開
 EXPOSE 8000
