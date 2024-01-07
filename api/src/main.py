@@ -32,5 +32,8 @@ async def add_picture(file: UploadFile):
     # 画像をレスポンスとして返す
     return {"item_id": 1, "image": image_base64}
 
+@app.post("/login")
+async def login(file: UploadFile):
+    return {"item_id": 1, "image": "hoge"}
 
 handler = Mangum(app)
