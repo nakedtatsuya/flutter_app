@@ -17,7 +17,6 @@ def init_google_oauth() -> OAuth:
         client_kwargs={"scope": "openid email profile"},
         client_id=client_id,
         client_secret=client_secret,
-        # **conf,
     )
 
     return oauth

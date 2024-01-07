@@ -43,6 +43,7 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   google_sign_in: ^6.2.1
   url_launcher: ^6.2.2
+  webview_flutter: ^4.4.3
   
 
 dev_dependencies:
