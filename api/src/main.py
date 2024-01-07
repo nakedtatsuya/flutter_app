@@ -1,12 +1,16 @@
+import base64
+
 import cv2
 import numpy as np
 from fastapi import FastAPI, UploadFile
+from lib.auth.initialize import init_google_oauth
 from lib.mosaic_face.index import mosaic_face
-import base64
 from mangum import Mangum
+from starlette.middleware.sessions import SessionMiddleware
 from starlette.requests import Request
 
 app = FastAPI()
+app.add_middleware(SessionMiddleware, secret_key="secret-string")
 
 
 @app.get("/")
@@ -34,17 +38,8 @@ async def add_picture(file: UploadFile):
     return {"item_id": 1, "image": image_base64}
 
 
-from starlette.middleware.sessions import SessionMiddleware
-from authlib.integrations.starlette_client import OAuth
-from starlette.config import Config
+oauth = init_google_oauth()
 
-config = Config(".env")  # read config from .env file
-oauth = OAuth(config)
-oauth.register(
-    name="google",
-    server_metadata_url="https://accounts.google.com/.well-known/openid-configuration",
-    client_kwargs={"scope": "openid email profile"},
-)
 
 app = FastAPI()
 # we need this to save temporary code & state in session
@@ -53,15 +48,17 @@ app.add_middleware(SessionMiddleware, secret_key="some-random-string")
 
 @app.get("/login/google")
 async def login_via_google(request: Request):
-    redirect_uri = request.url_for("auth_via_google")
+    # absolute url for callback
+    # we will define it below
+    redirect_uri = request.url_for("auth")
     return await oauth.google.authorize_redirect(request, redirect_uri)
 
 
-@app.get("/auth/google")
-async def auth_via_google(request: Request):
+@app.route("/auth/google")
+async def auth(request: Request):
     token = await oauth.google.authorize_access_token(request)
-    user = token["userinfo"]
-    return dict(user)
+    user = await oauth.google.parse_id_token(request, token)
+    return {"user": user}
 
 
 handler = Mangum(app)
