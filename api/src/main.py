@@ -8,6 +8,7 @@ from lib.mosaic_face.index import mosaic_face
 from mangum import Mangum
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.requests import Request
+from fastapi.responses import JSONResponse
 
 app = FastAPI()
 app.add_middleware(SessionMiddleware, secret_key="secret-string")
@@ -57,8 +58,12 @@ async def login_via_google(request: Request):
 @app.route("/auth/google")
 async def auth(request: Request):
     token = await oauth.google.authorize_access_token(request)
-    user = await oauth.google.parse_id_token(request, token)
-    return {"user": user}
+    print(token)
+    print("============================")
+    user = token["userinfo"]
+    print("============================")
+    print(user)
+    return JSONResponse(user)
 
 
 handler = Mangum(app)
