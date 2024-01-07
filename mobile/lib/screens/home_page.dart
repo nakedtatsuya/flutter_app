@@ -26,29 +26,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // futurePicture = NetworkService.fetchJSON();
   }
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-
-    // ここで各ボタンのアクションを定義します。
-    switch (index) {
-      case 0:
-        // デバイスの写真一覧を表示
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const DevicePicturesScreen()),
-        );
-        break;
-      case 1:
-        // カメラを起動
-        break;
-      case 2:
-        // 設定画面へ
-        break;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -63,10 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Text('設定'),
             ],
           ),
-          bottomNavigationBar: HomeBottomNavigationWidget(
-            onItemTapped: _onItemTapped,
-            selectedIndex: _selectedIndex,
-          ),
+          bottomNavigationBar: HomeBottomNavigationWidget(),
         ));
   }
 }
