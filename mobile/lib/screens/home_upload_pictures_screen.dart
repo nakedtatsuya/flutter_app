@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:mosaic_app/services/google_auth.dart';
 import '../widgets/image_upload_widget.dart';
 import '../widgets/home_bottom_navigation_widget.dart';
 
@@ -34,6 +37,25 @@ class _HomeUploadPicturesScreenState extends State<HomeUploadPicturesScreen> {
           //     }
           //   },
           // ),
+          ElevatedButton(
+            onPressed: () async {
+              try {
+                GoogleAuthService googleAuthService = GoogleAuthService();
+                var account = await googleAuthService.loginWithGoogle();
+                if (account != null) {
+                  print(account.displayName);
+                  print(account.email);
+                  print(account.photoUrl);
+                } else {
+                  print('account is null');
+                }
+                // ログイン成功時の処理
+              } catch (e) {
+                // エラー処理
+              }
+            },
+            child: Text('Login with Google'),
+          ),
           const SizedBox(height: 24),
         ],
       ),

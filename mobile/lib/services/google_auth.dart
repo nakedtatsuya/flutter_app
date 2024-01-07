@@ -1,9 +1,9 @@
 import 'package:google_sign_in/google_sign_in.dart';
 
-class GoogleSignInProvider {
+class GoogleAuthService {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
-  Future<GoogleSignInAccount?> signInWithGoogle() async {
+  Future<GoogleSignInAccount?> loginWithGoogle() async {
     try {
       final GoogleSignInAccount? account = await _googleSignIn.signIn();
       return account;

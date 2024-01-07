@@ -18,6 +18,7 @@ dependencies = [
     "ruff>=0.1.9",
     "mypy>=1.8.0",
     "mangum>=0.17.0",
+    "firebase-admin>=6.3.0",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
