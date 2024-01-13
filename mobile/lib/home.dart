@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mosaic_app/screens/home_upload_pictures_screen.dart';
-import '../widgets/image_upload_widget.dart';
-import '../models/picture.dart';
-import '../services/network_service.dart';
-import '../widgets/home_bottom_navigation_widget.dart';
-import 'home_device_pictures_screen.dart';
+import 'package:mosaic_app/screens/upload_pictures_screen.dart';
+
+import 'widgets/home_bottom_navigation_widget.dart';
+import 'screens/device_pictures_screen.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -34,13 +32,13 @@ class _MyHomePageState extends State<MyHomePage> {
           appBar: AppBar(title: Text(widget.title)),
           body: const TabBarView(
             children: [
-              HomeUploadPicturesScreen(),
+              UploadPicturesScreen(),
               DevicePicturesScreen(),
               Text('カメラ'),
               Text('設定'),
             ],
           ),
-          bottomNavigationBar: HomeBottomNavigationWidget(),
+          bottomNavigationBar: const HomeBottomNavigationWidget(),
         ));
   }
 }
