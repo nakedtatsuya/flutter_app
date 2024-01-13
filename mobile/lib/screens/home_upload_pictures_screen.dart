@@ -37,26 +37,7 @@ class _HomeUploadPicturesScreenState extends State<HomeUploadPicturesScreen> {
           //     }
           //   },
           // ),
-
-          ElevatedButton(
-            onPressed: () async {
-              try {
-                GoogleAuthService googleAuthService = GoogleAuthService();
-                var account = await googleAuthService.loginWithGoogle();
-                if (account != null) {
-                  print(account.displayName);
-                  print(account.email);
-                  print(account.photoUrl);
-                } else {
-                  print('account is null');
-                }
-                // ログイン成功時の処理
-              } catch (e) {
-                // エラー処理
-              }
-            },
-            child: Text('Login with Google'),
-          ),
+          // GoogleAuthService(),
           const SizedBox(height: 24),
         ],
       ),
