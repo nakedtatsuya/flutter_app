@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "281765697254",
+    "project_id": "python-mosaic-app",
+    "storage_bucket": "python-mosaic-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:281765697254:android:f8dc1f5bda59d5aa2d8d27",
+        "android_client_info": {
+          "package_name": "com.example.mobile2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "281765697254-fmq0u63hgpg2c0803dsqqkgjp01g5vck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ_3DzZaK7J5AprzgIriMzctrHhMvnI_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "281765697254-fmq0u63hgpg2c0803dsqqkgjp01g5vck.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "281765697254-m7082t77durkjhvkp7cdtj7n7k4m2iut.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mobile2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
