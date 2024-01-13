@@ -3,7 +3,6 @@
     <application
         android:label="mobile2"
         android:name="${applicationName}"
-        android:requestLegacyExternalStorage="true"
         android:icon="@mipmap/launcher_icon">
         
         <activity

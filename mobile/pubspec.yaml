@@ -47,7 +47,7 @@ dependencies:
   webview_flutter: ^4.4.3
   firebase_core: ^2.24.2
   firebase_auth: ^4.16.0
-  photo_manager: ^3.0.0-dev.1
+  photo_manager: ^3.0.0-dev.5
 
   
 
