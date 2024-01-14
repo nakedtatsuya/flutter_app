@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mosaic_app/screens/upload_pictures_screen.dart';
+import 'package:mosaic_app/screens/photo_edit_screen.dart';
 
 import 'widgets/home_bottom_navigation_widget.dart';
-import 'screens/device_pictures_screen.dart';
+import 'screens/device_photos_screen.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -30,8 +30,8 @@ class _MyHomePageState extends State<MyHomePage> {
           appBar: AppBar(title: Text(widget.title)),
           body: const TabBarView(
             children: [
-              UploadPicturesScreen(),
-              DevicePicturesScreen(),
+              DevicePhotosScreen(),
+              DevicePhotosScreen(),
               Text('カメラ'),
               Text('設定'),
             ],
