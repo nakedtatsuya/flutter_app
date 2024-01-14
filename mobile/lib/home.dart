@@ -16,8 +16,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   // int _selectedIndex = 0;
 
-  // late Future<Picture> futurePicture;
-
   @override
   void initState() {
     super.initState();
