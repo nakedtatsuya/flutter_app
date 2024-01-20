@@ -46,7 +46,6 @@ class _PhotoEditScreenState extends State<PhotoEditScreen>
     // Use the Todo to create the UI.
     return Scaffold(
       appBar: AppBar(
-        // title: const Text('写真編集'),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.more_vert),

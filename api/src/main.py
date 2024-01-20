@@ -3,12 +3,15 @@ import base64
 import cv2
 import numpy as np
 from fastapi import FastAPI, UploadFile
+from fastapi.responses import JSONResponse
 from lib.auth.initialize import init_google_oauth
 from lib.mosaic_face.index import mosaic_face
 from mangum import Mangum
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.requests import Request
-from fastapi.responses import JSONResponse
+from authors.models import Author
+from authors.query import Querier
+from sqlalchemy import create_engine, text, create_engine
 
 app = FastAPI()
 app.add_middleware(SessionMiddleware, secret_key="secret-string")
@@ -16,7 +19,11 @@ app.add_middleware(SessionMiddleware, secret_key="secret-string")
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    con = create_engine("sqlite:///tutorial.db", echo=True).connect()
+    querier = Querier(con)
+    author = querier.create_author(name="hoge", bio="fuga")
+    print(author)
+    return {"authors": "res"}
 
 
 @app.get("/items/{item_id}")
@@ -42,7 +49,6 @@ async def add_picture(file: UploadFile):
 oauth = init_google_oauth()
 
 
-app = FastAPI()
 # we need this to save temporary code & state in session
 app.add_middleware(SessionMiddleware, secret_key="some-random-string")
 
